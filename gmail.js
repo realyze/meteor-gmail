@@ -77,7 +77,7 @@ GMail.Client.prototype.handleNewMessage = function (message, historyId) {
   // retrieve the full message, XXX should be done lazily
   var doc = self.get(message.id);
   _.each(self.listeners, function (listener) {
-    listener.handleNewMessage(doc, historyId);
+    listener.callback(doc, historyId);
   });
 };
 
